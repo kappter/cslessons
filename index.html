@@ -4,280 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Where Is the File?</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      overflow-x: hidden;
-    }
-
-    .nav {
-      position: fixed;
-      top: 14px;
-      right: 14px;
-      z-index: 1000;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #111;
-      background: #f5f5f5;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    .slide {
-      min-height: 100vh;
-      padding: 80px 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .card {
-      width: min(1000px, 100%);
-      height: calc(100vh - 140px);
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.1;
-    }
-
-    h2 {
-      margin: 0 0 20px;
-      font-size: 1.05rem;
-      font-weight: normal;
-      color: #d0d0d0;
-    }
-
-    .text-box {
-      flex: 1;
-      overflow-y: auto;
-      padding-right: 10px;
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-
-    .text-box p,
-    .text-box ul {
-      margin: 0 0 18px;
-    }
-
-    .text-box ul {
-      padding-left: 22px;
-    }
-
-    .accent {
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    #slide1 { background: linear-gradient(180deg, #1a1a1a 0%, #20283a 100%); }
-    #slide2 { background: linear-gradient(180deg, #161616 0%, #24352a 100%); }
-    #slide3 { background: linear-gradient(180deg, #121212 0%, #38262a 100%); }
-
-    @media (max-width: 700px) {
-      .slide {
-        padding: 72px 14px 20px;
-      }
-
-      .card {
-        height: calc(100vh - 105px);
-        padding: 20px;
-        border-radius: 16px;
-      }
-
-      .text-box {
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .nav {
-        top: 10px;
-        right: 10px;
-        left: 10px;
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="nav">
-    <a href="#slide1">Short</a>
-    <a href="#slide2">Medium</a>
-    <a href="#slide3">Long</a>
-  </div>
-
-  <section class="slide" id="slide1">
-    <div class="card">
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Teaching Tech Awareness</p>
       <h1>Where Is the File?</h1>
-      <h2>Short Version</h2>
-      <div class="text-box">
-        <p>After decades in tech, I’ve learned there’s really only one skill you need to feel confident:</p>
-
-        <p class="accent">Ask yourself: “Where is the file?”</p>
-
-        <p>If you know exactly where your data lives, where it’s going, and how many copies exist—you’re in control.</p>
-
-        <p>Because every time you click save, your file isn’t just “saved”… it’s being broken into bits, sent across networks, and copied onto machines you may never see.</p>
-
-        <p class="accent">Your goal: one file—and you know where it is.</p>
-
-        <p>Happy computing.</p>
+      <p class="hero-text">
+        A media-style teaching page built around one of the most important questions in computing:
+        where your file actually lives, how it moves, and how many copies of it now exist.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#featured">Explore Tiles</a>
+        <a class="button button-secondary" href="#deck">Open Slide Deck</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="slide" id="slide2">
-    <div class="card">
-      <h1>Where Is the File?</h1>
-      <h2>Medium Version</h2>
-      <div class="text-box">
-        <p>After decades of working in tech and teaching programming, I’ve realized something surprising:</p>
-
-        <p>There’s really only one skill you need to feel comfortable with technology—and it’s actually a question:</p>
-
-        <p class="accent">“Where is the file?”</p>
-
-        <p>Every time you save something, your computer doesn’t just tuck it neatly away. It turns your file into bits, sends those bits across wires or Wi-Fi, often across a WAN (wide area network), and stores them on physical machines—sometimes across the country or the world.</p>
-
-        <p>And not just once.</p>
-
-        <p>It may create multiple copies:</p>
-        <ul>
-          <li>a local version on your device</li>
-          <li>a synced version in the cloud</li>
-          <li>backups on other servers</li>
-          <li>cached versions for speed</li>
-        </ul>
-
-        <p>So the real skill isn’t “knowing apps” or “being good with computers.”</p>
-
-        <p>It’s knowing:</p>
-        <ul>
-          <li>where your data currently lives</li>
-          <li>where it will be stored next</li>
-          <li>how many copies exist</li>
-        </ul>
-
-        <p>Because once copies multiply without your awareness, control disappears.</p>
-
-        <p class="accent">The goal is simple: one file—and you know exactly where it is.</p>
-
-        <p>Happy computing.</p>
+  <main>
+    <section class="section" id="featured">
+      <div class="section-header">
+        <h2>Featured Experiences</h2>
+        <p>Choose a tile to explore a teaching idea.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="slide" id="slide3">
-    <div class="card">
-      <h1>Where Is the File?</h1>
-      <h2>Long Version</h2>
-      <div class="text-box">
-        <p>After decades of working in technology—and teaching students how to program—I’ve come to a conclusion that surprises people:</p>
+      <div class="tile-grid">
+        <article class="tile featured-tile" data-target="deck">
+          <div class="tile-backdrop tile-backdrop-1"></div>
+          <div class="tile-content">
+            <span class="tile-tag">Featured Deck</span>
+            <h3>Where Is the File?</h3>
+            <p>
+              A scrollable slide deck with humor, clarity, and a strong closing message about
+              source of truth, versions, and file location.
+            </p>
+            <button class="tile-link">Open Deck</button>
+          </div>
+        </article>
 
-        <p>There is really only one skill you need to feel comfortable with technology.</p>
+        <article class="tile" data-target="wrong-answers">
+          <div class="tile-backdrop tile-backdrop-2"></div>
+          <div class="tile-content">
+            <span class="tile-tag">Humor</span>
+            <h3>Wrong Answers</h3>
+            <p>Funny examples of how people absolutely should not answer the question.</p>
+            <button class="tile-link">Jump In</button>
+          </div>
+        </article>
 
-        <p>And it’s not coding.<br>
-        It’s not troubleshooting.<br>
-        It’s not memorizing tools.</p>
+        <article class="tile" data-target="why-it-matters">
+          <div class="tile-backdrop tile-backdrop-3"></div>
+          <div class="tile-content">
+            <span class="tile-tag">Core Concept</span>
+            <h3>Why It Matters</h3>
+            <p>See why vague answers create confusion, duplication, and version chaos.</p>
+            <button class="tile-link">Read More</button>
+          </div>
+        </article>
 
-        <p>It’s a single question:</p>
-
-        <p class="accent">“Where is the file?”</p>
-
-        <p>Because everything in computing—every app, every system, every “save” button—comes down to the movement and storage of data.</p>
-
-        <p>When you create or save a file, here’s what’s actually happening:</p>
-
-        <p>Your file is converted into binary data—bits. Those bits don’t just sit in one place. They move.</p>
-
-        <p>If you’re saving locally, they’re written to a storage device—an SSD or hard drive—on your machine.</p>
-
-        <p>If you’re saving to the cloud, something far more complex happens:</p>
-        <ul>
-          <li>Your file is broken into packets</li>
-          <li>Those packets are sent across your local network</li>
-          <li>Then across a WAN—possibly across cities, states, or continents</li>
-          <li>They are reassembled on a remote server</li>
-          <li>That server may immediately replicate your file across multiple data centers</li>
-          <li>Additional systems may cache, index, or back it up</li>
-        </ul>
-
-        <p>Within seconds, your “one file” may exist in several places:</p>
-        <ul>
-          <li>your device</li>
-          <li>a cloud server</li>
-          <li>a backup server</li>
-          <li>a redundancy system</li>
-          <li>maybe even a temporary cache somewhere in between</li>
-        </ul>
-
-        <p>And yet, from your perspective, it still looks like a single file.</p>
-
-        <p>This illusion is where confusion—and risk—begins.</p>
-
-        <p>Because once you lose track of:</p>
-        <ul>
-          <li>where the file actually lives</li>
-          <li>which version is the “real” one</li>
-          <li>how many copies exist</li>
-        </ul>
-
-        <p>you lose control.</p>
-
-        <p>You overwrite the wrong version.<br>
-        You delete one copy, thinking it’s the only one.<br>
-        Or worse—you assume something is saved when it isn’t.</p>
-
-        <p>So the true skill in technology is awareness.</p>
-
-        <p>Not surface-level usage—but spatial and conceptual awareness of your data:</p>
-        <ul>
-          <li>Where is it right now?</li>
-          <li>Where is it going next?</li>
-          <li>How many versions or copies exist?</li>
-          <li>Which one is the source of truth?</li>
-        </ul>
-
-        <p>If you can answer those questions confidently, you are no longer guessing—you are operating with intent.</p>
-
-        <p>And that leads to a simple philosophy:</p>
-
-        <p class="accent">Your goal: Keep it to one file—and know exactly where it is.</p>
-
-        <p>Everything else—apps, platforms, systems—is just a layer on top of that truth.</p>
-
-        <p>Happy computing.</p>
+        <article class="tile" data-target="future-lab">
+          <div class="tile-backdrop tile-backdrop-4"></div>
+          <div class="tile-content">
+            <span class="tile-tag">Coming Soon</span>
+            <h3>WAN / Packet Lab</h3>
+            <p>A placeholder tile for a future visual showing packets, servers, and copies.</p>
+            <button class="tile-link">Preview</button>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section deck-section" id="deck">
+      <div class="section-header">
+        <h2>Slide Deck</h2>
+        <p>Use the quick navigation or scroll through the full presentation.</p>
+      </div>
+
+      <nav class="deck-nav">
+        <a href="#slide-1">1</a>
+        <a href="#slide-2">2</a>
+        <a href="#slide-3">3</a>
+        <a href="#slide-4">4</a>
+        <a href="#slide-5">5</a>
+      </nav>
+
+      <section class="slide" id="slide-1">
+        <div class="slide-card">
+          <p class="slide-kicker">Opening Idea</p>
+          <h2>There is only one real tech skill:</h2>
+          <p class="slide-quote">“Where is the file?”</p>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-2">
+        <div class="slide-card" id="wrong-answers">
+          <p class="slide-kicker">What People Say</p>
+          <h2>Common wrong answers</h2>
+          <ul>
+            <li>“It’s in Microsoft Word”</li>
+            <li>“It’s on the computer”</li>
+            <li>“It’s in Google”</li>
+            <li>“It’s in the cloud”</li>
+            <li>“It’s saved”</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-3">
+        <div class="slide-card">
+          <p class="slide-kicker">More Wrong Answers</p>
+          <h2>The file-lost starter pack</h2>
+          <ul>
+            <li>“It’s in my email”</li>
+            <li>“It’s on my desktop”</li>
+            <li>“I just had it open”</li>
+            <li>“It auto-saved”</li>
+            <li>“It’s on my other computer”</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-4">
+        <div class="slide-card" id="why-it-matters">
+          <p class="slide-kicker">Why This Fails</p>
+          <h2>Why vague answers break confidence</h2>
+          <ul>
+            <li>You do not know the actual location</li>
+            <li>You do not know the real file name</li>
+            <li>You do not know how many copies exist</li>
+            <li>You do not know which version is correct</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide" id="slide-5">
+        <div class="slide-card">
+          <p class="slide-kicker">The Correct Answer</p>
+          <h2>What control sounds like</h2>
+          <p class="slide-quote small-quote">
+            “It’s in this folder, on this system, with this exact filename, and I know where else it exists.”
+          </p>
+          <p class="closing-line">One file. Known location.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="section" id="future-lab">
+      <div class="section-header">
+        <h2>Future Expansion</h2>
+        <p>This area can become your WAN animation, packet travel demo, or version-chaos lesson.</p>
+      </div>
+      <div class="placeholder-panel">
+        <p>Next idea: animate a file becoming packets, moving across a WAN, landing on a server, and replicating into backups and caches.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
