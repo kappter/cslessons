@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Is the File?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .nav {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 1000;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #111;
+      background: #f5f5f5;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: 80px 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card {
+      width: min(1000px, 100%);
+      height: calc(100vh - 140px);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      font-weight: normal;
+      color: #d0d0d0;
+    }
+
+    .text-box {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .text-box p,
+    .text-box ul {
+      margin: 0 0 18px;
+    }
+
+    .text-box ul {
+      padding-left: 22px;
+    }
+
+    .accent {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    #slide1 { background: linear-gradient(180deg, #1a1a1a 0%, #20283a 100%); }
+    #slide2 { background: linear-gradient(180deg, #161616 0%, #24352a 100%); }
+    #slide3 { background: linear-gradient(180deg, #121212 0%, #38262a 100%); }
+
+    @media (max-width: 700px) {
+      .slide {
+        padding: 72px 14px 20px;
+      }
+
+      .card {
+        height: calc(100vh - 105px);
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .text-box {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .nav {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="#slide1">Short</a>
+    <a href="#slide2">Medium</a>
+    <a href="#slide3">Long</a>
+  </div>
+
+  <section class="slide" id="slide1">
+    <div class="card">
+      <h1>Where Is the File?</h1>
+      <h2>Short Version</h2>
+      <div class="text-box">
+        <p>After decades in tech, I’ve learned there’s really only one skill you need to feel confident:</p>
+
+        <p class="accent">Ask yourself: “Where is the file?”</p>
+
+        <p>If you know exactly where your data lives, where it’s going, and how many copies exist—you’re in control.</p>
+
+        <p>Because every time you click save, your file isn’t just “saved”… it’s being broken into bits, sent across networks, and copied onto machines you may never see.</p>
+
+        <p class="accent">Your goal: one file—and you know where it is.</p>
+
+        <p>Happy computing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="slide2">
+    <div class="card">
+      <h1>Where Is the File?</h1>
+      <h2>Medium Version</h2>
+      <div class="text-box">
+        <p>After decades of working in tech and teaching programming, I’ve realized something surprising:</p>
+
+        <p>There’s really only one skill you need to feel comfortable with technology—and it’s actually a question:</p>
+
+        <p class="accent">“Where is the file?”</p>
+
+        <p>Every time you save something, your computer doesn’t just tuck it neatly away. It turns your file into bits, sends those bits across wires or Wi-Fi, often across a WAN (wide area network), and stores them on physical machines—sometimes across the country or the world.</p>
+
+        <p>And not just once.</p>
+
+        <p>It may create multiple copies:</p>
+        <ul>
+          <li>a local version on your device</li>
+          <li>a synced version in the cloud</li>
+          <li>backups on other servers</li>
+          <li>cached versions for speed</li>
+        </ul>
+
+        <p>So the real skill isn’t “knowing apps” or “being good with computers.”</p>
+
+        <p>It’s knowing:</p>
+        <ul>
+          <li>where your data currently lives</li>
+          <li>where it will be stored next</li>
+          <li>how many copies exist</li>
+        </ul>
+
+        <p>Because once copies multiply without your awareness, control disappears.</p>
+
+        <p class="accent">The goal is simple: one file—and you know exactly where it is.</p>
+
+        <p>Happy computing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" id="slide3">
+    <div class="card">
+      <h1>Where Is the File?</h1>
+      <h2>Long Version</h2>
+      <div class="text-box">
+        <p>After decades of working in technology—and teaching students how to program—I’ve come to a conclusion that surprises people:</p>
+
+        <p>There is really only one skill you need to feel comfortable with technology.</p>
+
+        <p>And it’s not coding.<br>
+        It’s not troubleshooting.<br>
+        It’s not memorizing tools.</p>
+
+        <p>It’s a single question:</p>
+
+        <p class="accent">“Where is the file?”</p>
+
+        <p>Because everything in computing—every app, every system, every “save” button—comes down to the movement and storage of data.</p>
+
+        <p>When you create or save a file, here’s what’s actually happening:</p>
+
+        <p>Your file is converted into binary data—bits. Those bits don’t just sit in one place. They move.</p>
+
+        <p>If you’re saving locally, they’re written to a storage device—an SSD or hard drive—on your machine.</p>
+
+        <p>If you’re saving to the cloud, something far more complex happens:</p>
+        <ul>
+          <li>Your file is broken into packets</li>
+          <li>Those packets are sent across your local network</li>
+          <li>Then across a WAN—possibly across cities, states, or continents</li>
+          <li>They are reassembled on a remote server</li>
+          <li>That server may immediately replicate your file across multiple data centers</li>
+          <li>Additional systems may cache, index, or back it up</li>
+        </ul>
+
+        <p>Within seconds, your “one file” may exist in several places:</p>
+        <ul>
+          <li>your device</li>
+          <li>a cloud server</li>
+          <li>a backup server</li>
+          <li>a redundancy system</li>
+          <li>maybe even a temporary cache somewhere in between</li>
+        </ul>
+
+        <p>And yet, from your perspective, it still looks like a single file.</p>
+
+        <p>This illusion is where confusion—and risk—begins.</p>
+
+        <p>Because once you lose track of:</p>
+        <ul>
+          <li>where the file actually lives</li>
+          <li>which version is the “real” one</li>
+          <li>how many copies exist</li>
+        </ul>
+
+        <p>you lose control.</p>
+
+        <p>You overwrite the wrong version.<br>
+        You delete one copy, thinking it’s the only one.<br>
+        Or worse—you assume something is saved when it isn’t.</p>
+
+        <p>So the true skill in technology is awareness.</p>
+
+        <p>Not surface-level usage—but spatial and conceptual awareness of your data:</p>
+        <ul>
+          <li>Where is it right now?</li>
+          <li>Where is it going next?</li>
+          <li>How many versions or copies exist?</li>
+          <li>Which one is the source of truth?</li>
+        </ul>
+
+        <p>If you can answer those questions confidently, you are no longer guessing—you are operating with intent.</p>
+
+        <p>And that leads to a simple philosophy:</p>
+
+        <p class="accent">Your goal: Keep it to one file—and know exactly where it is.</p>
+
+        <p>Everything else—apps, platforms, systems—is just a layer on top of that truth.</p>
+
+        <p>Happy computing.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
