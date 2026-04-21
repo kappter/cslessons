@@ -23,7 +23,7 @@ body {
 }
 
 .wrap {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
   gap: 16px;
@@ -119,7 +119,8 @@ button:hover {
 .overview-card,
 .roster-card,
 .prompt-card,
-.reflection-card {
+.reflection-card,
+.chart-card {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--paper-2);
@@ -167,6 +168,24 @@ button:hover {
   padding: 7px 10px;
   border-radius: 999px;
   font-size: 0.88rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.chart-card.span-2 {
+  grid-column: span 2;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #fff;
+  border-radius: 10px;
 }
 
 .prompt-grid,
@@ -223,8 +242,13 @@ button:hover {
   .prompt-grid,
   .roster-grid,
   .reflection-grid,
-  .stats-grid {
+  .stats-grid,
+  .chart-grid {
     grid-template-columns: 1fr;
+  }
+
+  .chart-card.span-2 {
+    grid-column: auto;
   }
 
   body {
