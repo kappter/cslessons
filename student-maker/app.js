@@ -2,15 +2,6 @@ const form = document.getElementById("form");
 const preview = document.getElementById("preview");
 const jsonEl = document.getElementById("json");
 const downloadBtn = document.getElementById("download");
-
-form.addEventListener("input", update);
-downloadBtn.addEventListener("click", download);
-
-function build() {
-  const f = name => form.elements[name].value || "";
-
-  const depth = Number(f("reflectionDepth") || 5);
-
 const TOK_TERMS = [
   "Knowledge",
   "Belief",
@@ -23,6 +14,26 @@ const TOK_TERMS = [
   "Meaning",
   "Information"
 ];
+form.addEventListener("input", update);
+downloadBtn.addEventListener("click", download);
+
+function build() {
+  const f = name => form.elements[name].value || "";
+
+  const depth = Number(f("reflectionDepth") || 5);
+
+  const terms = [
+    "Knowledge",
+    "Belief",
+    "Truth",
+    "Justification",
+    "Doubt",
+    "Evidence",
+    "Interpretation",
+    "Perspective",
+    "Meaning",
+    "Information"
+  ];
 
   const reflections = {};
 
@@ -74,12 +85,7 @@ function buildBio(data) {
   const b = p.bio;
   const s = p.tokStance;
 
-  return `I'm a ${p.gradeLevel}th grade student who comes across as ${b.communicationStyle || "quiet"}, but I'm actually ${b.personalStrength || "thoughtful"}.
-I care about ${b.hobby1 || "things I enjoy"} and want to explore ${b.futureInterest || "my future"}.
-I think life makes sense when ${b.worldviewPhrase || "things connect"}.
-I learn best when things are ${b.learningStyle || "clear"}.
-I trust ${s.trustsMore || "evidence"} more than ${s.trustsLess || "confidence"}.
-I'm working on ${b.challengeArea || "improving myself"}.`;
+  return `I'm a ${p.gradeLevel}th grade student who comes across as ${b.communicationStyle || "quiet"}, but I'm actually ${b.personalStrength || "thoughtful"}. I care about ${b.hobby1 || "things I enjoy"} and want to explore ${b.futureInterest || "my future"}. I think life makes sense when ${b.worldviewPhrase || "things connect"}. I learn best when things are ${b.learningStyle || "clear"}. I trust ${s.trustsMore || "evidence"} more than ${s.trustsLess || "confidence"}. I'm working on ${b.challengeArea || "improving myself"}.`;
 }
 
 function update() {
@@ -90,13 +96,17 @@ function update() {
 
 function download() {
   const data = build();
-  const blob = new Blob([JSON.stringify(data, null, 2)]);
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: "application/json"
+  });
   const url = URL.createObjectURL(blob);
 
   const a = document.createElement("a");
   a.href = url;
   a.download = "student.json";
   a.click();
+
+  URL.revokeObjectURL(url);
 }
 function generateReflection(term, stage, f) {
   const tones = [
