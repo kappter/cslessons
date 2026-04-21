@@ -148,14 +148,14 @@ function generateText(term, slot) {
 
 function generateRating(slot, day, indexInDay) {
   const patterns = {
-    history: [2, 3, 4, 2, 3],
-    concrete: [3, 4, 2, 3, 4],
-    abstract: [2, 4, 3, 4, 2],
-    amalgam: [3, 2, 4, 3, 4],
-    motion: [4, 3, 2, 4, 3]
+    history: [5, 6, 7, 4, 6, 8],
+    concrete: [6, 7, 5, 8, 6, 7],
+    abstract: [5, 8, 6, 7, 5, 9],
+    amalgam: [4, 6, 7, 8, 5, 7],
+    motion: [7, 8, 6, 9, 5, 8]
   };
 
-  const seq = patterns[slot] || [3];
+  const seq = patterns[slot] || [6];
   return seq[(day + indexInDay) % seq.length];
 }
 
