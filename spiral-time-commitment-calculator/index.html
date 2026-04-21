@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiral Time Commitment Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">TOK / Spiral Planning</p>
+      <h1>Spiral Time Commitment Calculator</h1>
+      <p>Enter the number of terms in a spiral list and instantly see the total reflection count and time commitment for 2-, 3-, 4-, and 5-reflection models.</p>
+    </header>
+
+    <section class="grid">
+      <section class="card controls-card">
+        <h2>Inputs</h2>
+
+        <label for="termCount">Number of terms</label>
+        <input id="termCount" type="number" min="1" step="1" value="10" />
+
+        <label for="minutesPerReflection">Minutes per reflection</label>
+        <input id="minutesPerReflection" type="number" min="1" step="1" value="2" />
+
+        <div class="quick-buttons">
+          <button type="button" data-terms="10">10 terms</button>
+          <button type="button" data-terms="27">27 terms</button>
+          <button type="button" data-terms="30">30 terms</button>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-label">Current setup</div>
+          <div id="summaryText" class="summary-text"></div>
+        </div>
+      </section>
+
+      <section class="card results-card">
+        <h2>Reflection Models</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Total Reflections</th>
+                <th>Total Minutes</th>
+                <th>Total Hours</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section class="card notes-card">
+      <h2>How it works</h2>
+      <ul>
+        <li>Total reflections = number of terms × reflections per term</li>
+        <li>Total minutes = total reflections × minutes per reflection</li>
+        <li>Use 10 terms for quick testing and 27 or more for fuller spiral planning</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
