@@ -21,7 +21,7 @@
 
         <label class="dropzone">
           <input id="fileInput" type="file" accept=".json,application/json" multiple />
-          <span>Click or drop 30–40 student JSON files here</span>
+          <span>Click or drop 20–40 student JSON files here</span>
         </label>
 
         <div class="toolbar">
@@ -71,6 +71,37 @@
         <div class="overview-card">
           <h3>Motion profile</h3>
           <div id="motionSummary" class="chip-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Visual dashboard</h2>
+      <p class="muted">Designed for a whole class, not just one student.</p>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>Top class concepts</h3>
+          <canvas id="conceptChart" height="320"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Motion profile</h3>
+          <canvas id="motionChart" height="320"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Average rating by student</h3>
+          <canvas id="studentChart" height="340"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Strongest reflection box distribution</h3>
+          <canvas id="slotChart" height="320"></canvas>
+        </div>
+        <div class="chart-card span-2">
+          <h3>Period comparison</h3>
+          <canvas id="periodChart" height="320"></canvas>
+        </div>
+        <div class="chart-card span-2">
+          <h3>Rating distribution across class</h3>
+          <canvas id="ratingChart" height="280"></canvas>
         </div>
       </div>
     </section>
