@@ -21,14 +21,34 @@ body {
   border-radius: 12px;
 }
 
-input {
+input,
+select {
   display: block;
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
+  font: inherit;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 button {
   padding: 10px;
   cursor: pointer;
+  font: inherit;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
