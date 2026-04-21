@@ -20,7 +20,6 @@ const TOK_TERMS = [
 ];
 
 const SLOT_LABELS_BY_DEPTH = {
-  2: ["concrete", "history"],
   3: ["abstract", "concrete", "history"],
   4: ["amalgam", "abstract", "concrete", "history"],
   5: ["motion", "amalgam", "abstract", "concrete", "history"]
@@ -28,7 +27,7 @@ const SLOT_LABELS_BY_DEPTH = {
 
 function build() {
   const f = name => String(form.elements[name]?.value || "").trim();
-  const depth = Math.max(2, Math.min(5, Number(f("reflectionDepth") || 5)));
+  const depth = Math.max(3, Math.min(5, Number(f("reflectionDepth") || 5)));
   const reflections = buildDayReflections(depth);
 
   return {
@@ -106,9 +105,10 @@ function buildDayReflections(depth) {
 }
 
 function generateReflection(term, slot, day, indexInDay) {
-  const text = generateText(term, slot);
-  const rating = generateRating(term, slot, day, indexInDay);
-  return { text, rating };
+  return {
+    text: generateText(term, slot),
+    rating: generateRating(slot, day, indexInDay)
+  };
 }
 
 function generateText(term, slot) {
@@ -146,12 +146,12 @@ function generateText(term, slot) {
   return options[Math.floor(Math.random() * options.length)];
 }
 
-function generateRating(term, slot, day, indexInDay) {
+function generateRating(slot, day, indexInDay) {
   const patterns = {
-    history: [3, 4, 2, 4, 3],
-    concrete: [4, 3, 4, 2, 3],
-    abstract: [3, 4, 4, 2, 3],
-    amalgam: [2, 3, 4, 3, 4],
+    history: [2, 3, 4, 2, 3],
+    concrete: [3, 4, 2, 3, 4],
+    abstract: [2, 4, 3, 4, 2],
+    amalgam: [3, 2, 4, 3, 4],
     motion: [4, 3, 2, 4, 3]
   };
 
