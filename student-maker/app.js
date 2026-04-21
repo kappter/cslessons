@@ -9,6 +9,31 @@ downloadBtn.addEventListener("click", download);
 function build() {
   const f = name => form.elements[name].value || "";
 
+  const depth = Number(f("reflectionDepth") || 5);
+
+const TOK_TERMS = [
+  "Knowledge",
+  "Belief",
+  "Truth",
+  "Justification",
+  "Doubt",
+  "Evidence",
+  "Interpretation",
+  "Perspective",
+  "Meaning",
+  "Information"
+];
+
+  const reflections = {};
+
+  terms.forEach((term, index) => {
+    reflections[term] = [];
+
+    for (let i = 0; i < depth; i++) {
+      reflections[term].push(generateReflection(term, i, f));
+    }
+  });
+
   return {
     version: 2,
     studentProfile: {
@@ -30,11 +55,17 @@ function build() {
         trustsLess: f("trustsLess")
       }
     },
+
     spiral: {
-      segments: [{ terms: [] }],
-      reflectionDepth: 5
+      segments: [
+        {
+          terms: terms
+        }
+      ],
+      reflectionDepth: depth
     },
-    reflections: {}
+
+    reflections: reflections
   };
 }
 
@@ -67,5 +98,27 @@ function download() {
   a.download = "student.json";
   a.click();
 }
+function generateReflection(term, stage, f) {
+  const tones = [
+    `I used to think ${term.toLowerCase()} was simple, but now I see it depends on context.`,
+    `${term} feels different depending on experience, not just facts.`,
+    `The more I think about ${term.toLowerCase()}, the harder it is to define clearly.`,
+    `${term} seems stable at first, but changes when perspective shifts.`,
+    `${term} connects to how people interpret the same situation differently.`
+  ];
 
+  const motions = [
+    `I want to track how ${term.toLowerCase()} shows up in my daily decisions this week.`,
+    `I could compare how different people define ${term.toLowerCase()}.`,
+    `I want to test if my understanding of ${term.toLowerCase()} holds in real situations.`,
+    `I could ask others how they experience ${term.toLowerCase()} differently.`,
+    `I want to challenge my assumptions about ${term.toLowerCase()} and see what changes.`
+  ];
+
+  return {
+    text: tones[stage % tones.length],
+    importance: Math.floor(Math.random() * 3) + 2, // 2–4 range
+    motion: motions[stage % motions.length]
+  };
+}
 update();
