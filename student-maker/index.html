@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student JSON Maker</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 
   <header class="hero">
     <h1>Student JSON Maker</h1>
-    <p>Build a student profile and export a valid TOK JSON file.</p>
+    <p>Build a student profile and export a valid TOK JSON file with a 0–4 reflection rating scale.</p>
   </header>
 
   <section class="grid">
@@ -28,7 +29,6 @@
 
       <label for="reflectionDepth">Reflection Model</label>
       <select name="reflectionDepth" id="reflectionDepth">
-        <option value="2">2-term model</option>
         <option value="3">3-term model</option>
         <option value="4">4-term model</option>
         <option value="5" selected>5-term model</option>
@@ -48,6 +48,10 @@
 
       <input name="trustsMore" placeholder="trust more" />
       <input name="trustsLess" placeholder="trust less" />
+
+      <div class="note-box">
+        <strong>Rating scale:</strong> Generated reflections use a <strong>0–4 rating scale</strong> for compatibility with Synthesis Log and the report tools.
+      </div>
 
       <button type="button" id="download">Download JSON</button>
 
