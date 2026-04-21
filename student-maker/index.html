@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student JSON Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+<main class="wrap">
+
+  <header class="hero">
+    <h1>Student JSON Maker</h1>
+    <p>Build a student profile and export a valid TOK JSON file.</p>
+  </header>
+
+  <section class="grid">
+
+    <form id="form" class="card">
+
+      <h2>Student Info</h2>
+
+      <input name="firstName" placeholder="First Name" />
+      <input name="lastInitial" placeholder="Last Initial" maxlength="1" />
+      <input name="gradeLevel" type="number" value="11" />
+      <input name="period" placeholder="Period" />
+
+      <h2>Bio Builder</h2>
+
+      <input name="communicationStyle" placeholder="communication style" />
+      <input name="personalStrength" placeholder="personal strength" />
+      <input name="hobby1" placeholder="hobby" />
+      <input name="futureInterest" placeholder="future interest" />
+      <input name="worldviewPhrase" placeholder="worldview phrase" />
+      <input name="learningStyle" placeholder="learning style" />
+      <input name="challengeArea" placeholder="challenge area" />
+
+      <h2>TOK Stance</h2>
+
+      <input name="trustsMore" placeholder="trust more" />
+      <input name="trustsLess" placeholder="trust less" />
+
+      <button type="button" id="download">Download JSON</button>
+
+    </form>
+
+    <section class="card">
+      <h2>Preview</h2>
+      <p id="preview"></p>
+      <pre id="json"></pre>
+    </section>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
